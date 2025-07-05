@@ -36,8 +36,8 @@ const socialMediaLinks = {
   github: "https://github.com/Madhesh767",
   linkedin: "https://www.linkedin.com/in/madhesh-d-9b1b42251/",
   gmail: "madhesh@pitfall.in",
-  instagram:"",
- 
+  instagram: "",
+
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -70,7 +70,7 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "css3",
       fontAwesomeClassname: "fab fa-css3-alt"
     },
-   
+
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
@@ -83,7 +83,7 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
     },
-    
+
     {
       skillName: "npm",
       fontAwesomeClassname: "fab fa-npm"
@@ -96,12 +96,11 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
     },
-   
+
     {
       skillName: "python",
       fontAwesomeClassname: "fab fa-python"
-    },
-  
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -116,16 +115,14 @@ const educationInfo = {
       logo: require("./assets/images/LMHSS.png"),
       subHeader: "Computer Science",
       duration: " 2009 - 2021",
-      desc: " HSC:87%",
-     
+      desc: " HSC:87%"
     },
     {
       schoolName: "Hindusthan Institute of Technology",
       logo: require("./assets/images/HIT.png"),
       subHeader: "BE.CSE",
       duration: "2021-2025",
-      desc: "CGPA:7.4",
-     
+      desc: "CGPA:7.4"
     }
   ]
 };
@@ -161,25 +158,15 @@ const workExperiences = {
       company: "Pitfall PVT LTD",
       companylogo: require("./assets/images/Pitfall.png"),
       date: "March 2025 – At Present",
-      descBullets: [
-        "Javascript",
-        "React JS",
-        "DynamoDB",
-        "AWS Lambda"
-      ]
+      descBullets: ["Javascript", "React JS", "DynamoDB", "AWS Lambda"]
     },
     {
       role: "Web developer Intern",
       company: "Codebind",
       companylogo: require("./assets/images/code.jpeg"),
       date: "June 2023 – July 2023",
-      descBullets:[
-        "HTML",
-        "CSS",
-        "Mongodb"
-      ]
-    },
-    
+      descBullets: ["HTML", "CSS", "Mongodb"]
+    }
   ]
 };
 
@@ -200,14 +187,14 @@ const bigProjects = {
     {
       image: require("./assets/images/gesture.png"),
       projectName: "Hand Gesture",
-      projectDesc: "The hand gesture recognition project uses computer vision to detect and interpret hand movements in real time. It enables touchless interaction by mapping gestures to specific commands. This system can be applied in areas like sign language translation, virtual control, and robotics, enhancing human-computer interaction in an intuitive way. ",
-      
+      projectDesc:
+        "The hand gesture recognition project uses computer vision to detect and interpret hand movements in real time. It enables touchless interaction by mapping gestures to specific commands. This system can be applied in areas like sign language translation, virtual control, and robotics, enhancing human-computer interaction in an intuitive way. "
     },
     {
       image: require("./assets/images/Carproject.png"),
       projectName: "Car rental system",
-      projectDesc: "Designed and implemented a user-friendly web-based platform that enables customers  to seamlessly browse, reserve, and manage car rentals. Integrated features such as real-time availability, pricing, and secure payment processing. Implemented a comprehensive admin dashboard for efficient fleet management, reservation tracking, and reporting.  ",
-      
+      projectDesc:
+        "Designed and implemented a user-friendly web-based platform that enables customers  to seamlessly browse, reserve, and manage car rentals. Integrated features such as real-time availability, pricing, and secure payment processing. Implemented a comprehensive admin dashboard for efficient fleet management, reservation tracking, and reporting.  "
     }
   ],
   display: true // Set false to hide this section, defaults to true

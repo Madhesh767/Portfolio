@@ -58,7 +58,7 @@ const Main = () => {
             <WorkExperience />
             <Projects />
             <StartupProject />
-            
+
             <Profile />
             <Footer />
             <ScrollToTopButton />

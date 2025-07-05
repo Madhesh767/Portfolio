@@ -44,9 +44,6 @@ export default function socialMedia() {
         </a>
       ) : null}
 
-      
-
-
       {socialMediaLinks.instagram ? (
         <a
           href={socialMediaLinks.instagram}

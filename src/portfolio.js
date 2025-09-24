@@ -62,15 +62,11 @@ const skillsSection = {
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
-    {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
+    
+     {
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
     },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
@@ -96,11 +92,11 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
     },
-
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    }
+      skillName: "Git",
+      fontAwesomeClassname: "fab fa-git"
+    },
+   
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -184,6 +180,12 @@ const bigProjects = {
   title: "Projects",
   subtitle: "",
   projects: [
+    {
+      image: require("./assets/images/agribot.png"),
+      projectName: "Hand Gesture",
+      projectDesc:
+        "An Agri-Bot that helps small-scale farmers analyze soil and field conditions, providing insights on suitable crops to yield, improving productivity, efficiency, and sustainability."
+    },
     {
       image: require("./assets/images/gesture.png"),
       projectName: "Hand Gesture",

@@ -35,15 +35,14 @@ const Cursor = () => {
     };
   }, []);
 
-  const animateCursor = () => {
-    setRingPosition((prev) => ({
-      x: prev.x + (position.x - prev.x) * 0.12,
-      y: prev.y + (position.y - prev.y) * 0.12,
-    }));
-    requestRef.current = requestAnimationFrame(animateCursor);
-  };
-
   useEffect(() => {
+    const animateCursor = () => {
+      setRingPosition((prev) => ({
+        x: prev.x + (position.x - prev.x) * 0.12,
+        y: prev.y + (position.y - prev.y) * 0.12,
+      }));
+      requestRef.current = requestAnimationFrame(animateCursor);
+    };
     requestRef.current = requestAnimationFrame(animateCursor);
     return () => cancelAnimationFrame(requestRef.current);
   }, [position]);

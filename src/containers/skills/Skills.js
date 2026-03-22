@@ -63,12 +63,12 @@ export default function Skills() {
                 <span className="code-title">madhesh.config.js</span>
               </div>
               <div className="code-body">
-                <span className="c-comment">// Current stack</span><br />
+                <span className="c-comment">{"// Current stack"}</span><br />
                 <span className="c-key">const</span> madhesh <span className="c-punct">=</span> <span className="c-punct">{'{'}</span><br />
                 &nbsp;&nbsp;runtime<span className="c-punct">:</span> <span className="c-str">"Node.js 20"</span><span className="c-punct">,</span><br />
                 &nbsp;&nbsp;cloud<span className="c-punct">:</span> <span className="c-str">"AWS Lambda + API Gateway"</span><span className="c-punct">,</span><br />
                 &nbsp;&nbsp;db<span className="c-punct">:</span> <span className="c-punct">[</span><span className="c-str">"DynamoDB"</span><span className="c-punct">,</span> <span className="c-str">"PostgreSQL"</span><span className="c-punct">],</span><br />
-                &nbsp;&nbsp;experience<span className="c-punct">:</span> <span className="c-num">2</span><span className="c-punct">,</span> <span className="c-comment">// years</span><br />
+                &nbsp;&nbsp;experience<span className="c-punct">:</span> <span className="c-num">2</span><span className="c-punct">,</span> <span className="c-comment">{"// years"}</span><br />
                 &nbsp;&nbsp;openToWork<span className="c-punct">:</span> <span className="c-key">false</span><br />
                 <span className="c-punct">{'}'};</span>
               </div>

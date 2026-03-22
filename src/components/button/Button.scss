@@ -1,27 +1,26 @@
 @import "../../_globalColor";
 
 .main-button {
-  background-color: $buttonColor;
-  border: solid 1px $buttonColor;
-  color: $textColorDark;
+  background-color: transparent;
+  border: solid 1px $green;
+  color: $green;
   font-weight: 700;
   width: max-content;
   padding: 13px 22px;
   margin-right: 50px;
   text-transform: uppercase;
-  border-radius: 6px;
+  border-radius: 4px;
   text-align: center;
   text-decoration: none;
   display: block;
   margin-top: 20px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .main-button:hover {
-  background-color: $darkBoxShadow2;
-  color: $buttonColor;
-  transition: all 0.3s ease 0s;
+  background-color: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
   transform: translateY(-3px);
 }
 .project-button {

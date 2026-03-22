@@ -1,7 +1,3 @@
-/* Change this file to get your personal Portfolio */
-
-// To change portfolio colors globally go to the  _globalColor.scss file
-
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
@@ -16,14 +12,14 @@ const splashScreen = {
 // Summary And Greeting Section
 
 const illustration = {
-  animated: true // Set to false to use static SVG
+  animated: false // Set to false to use static SVG
 };
 
 const greeting = {
   username: "Madhesh",
   title: "Madhesh Duraisamy",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate Backend Developer 🚀 specializing in AWS Cloud Architecture and Node.js. I have extensive experience in building scalable, serverless applications and robust backend systems."
   ),
   resumeLink:
     "C:/Users/madhe/Documents/Trial/Portfolio/developerFolio/src/assets/images/Mad.pdf", // Set to empty to hide the button
@@ -47,14 +43,17 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "Specializing in Backend Architecture and Cloud Services.",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Building scalable backend services using Node.js and Express"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+    emoji("⚡ Architecting serverless solutions with AWS Lambda and API Gateway"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+      "⚡ Database management with DynamoDB, PostgreSQL, and MongoDB"
+    ),
+    emoji(
+      "⚡ Implementing CI/CD pipelines and automated deployments on AWS"
     )
   ],
 
@@ -62,41 +61,38 @@ const skillsSection = {
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
-    
-     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
-    },
-    {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
     {
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
-    },
-
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "Dynamo DB",
-      fontAwesomeClassname: "fas fa-database"
     },
     {
       skillName: "aws",
       fontAwesomeClassname: "fab fa-aws"
     },
     {
+      skillName: "JavaScript",
+      fontAwesomeClassname: "fab fa-js"
+    },
+    {
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "Dynamo DB",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "AWS EC2",
+      fontAwesomeClassname: "fas fa-server"
+    },
+    {
       skillName: "Git",
       fontAwesomeClassname: "fab fa-git"
     },
-   
+    {
+      skillName: "npm",
+      fontAwesomeClassname: "fab fa-npm"
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -129,19 +125,19 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      Stack: "Backend (Node.js/Express)", 
+      progressPercentage: "95%" 
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "AWS Cloud Services",
+      progressPercentage: "85%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "60%"
+      Stack: "Database (SQL/NoSQL)",
+      progressPercentage: "80%"
     }
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  displayCodersrank: false 
 };
 
 // Work experience section
@@ -182,7 +178,7 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/agribot.png"),
-      projectName: "Hand Gesture",
+      projectName: "Agri-Bot",
       projectDesc:
         "An Agri-Bot that helps small-scale farmers analyze soil and field conditions, providing insights on suitable crops to yield, improving productivity, efficiency, and sustainability."
     },
@@ -252,7 +248,7 @@ const achievementSection = {
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Certification", url: ""},
+        { name: "Certification", url: "" },
         {
           name: "Final Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
@@ -260,7 +256,7 @@ const achievementSection = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -284,7 +280,7 @@ const blogSection = {
         "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -303,7 +299,7 @@ const talkSection = {
       event_url: "https://www.facebook.com/events/2339906106275053/"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -316,7 +312,7 @@ const podcastSection = {
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Resume Section

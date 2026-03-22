@@ -1,50 +1,85 @@
-.education-heading {
-  font-size: 56px;
-  font-weight: 400;
+@import "../../_globalColor";
+
+#education {
+  padding: 6rem 4rem;
+  background: $bg2;
+  position: relative;
+  z-index: 1;
 }
 
-.education-section {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  padding: 20px 0px;
-  margin: 0px auto;
-  margin-top: 2rem;
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
-.education-section > * {
-  flex: 1;
-  margin-bottom: 30px;
+.edu-card {
+  background: $bg3;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: $border2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $cyan, $purple2);
+  }
 }
 
-.education-card-container {
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+.edu-year {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: $text3;
+  margin-bottom: 0.75rem;
 }
 
-@media (max-width: 1380px) {
-  .education-card-container {
-    padding-top: 0px;
-  }
-  .education-heading {
-    font-size: 40px;
-  }
-  .education-text-subtitle {
-    font-size: 18px;
-    text-align: center;
-  }
+.edu-school {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: $text;
 }
 
-@media (max-width: 768px) {
-  .education-card-container {
-    padding-top: 0px;
+.edu-degree {
+  font-size: 0.88rem;
+  color: $cyan;
+  margin-bottom: 0.5rem;
+}
+
+.edu-grade {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: $text3;
+}
+
+.edu-logo {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+  #education {
+    padding: 4rem 1.5rem;
   }
-  .education-heading {
-    font-size: 30px;
-    text-align: center;
-  }
-  .education-text-subtitle {
-    font-size: 16px;
+  .edu-grid {
+    grid-template-columns: 1fr;
   }
 }

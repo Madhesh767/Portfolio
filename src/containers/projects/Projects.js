@@ -1,74 +1,71 @@
-import React, {useState, useEffect, useContext, Suspense, lazy} from "react";
+import React from "react";
 import "./Project.scss";
-import Button from "../../components/button/Button";
-import {openSource, socialMediaLinks} from "../../portfolio";
-import StyleContext from "../../contexts/StyleContext";
-import Loading from "../../containers/loading/Loading";
+import {bigProjects, socialMediaLinks} from "../../portfolio";
+import {Fade} from "react-reveal";
+
 export default function Projects() {
-  const GithubRepoCard = lazy(() =>
-    import("../../components/githubRepoCard/GithubRepoCard")
-  );
-  const FailedLoading = () => null;
-  const renderLoader = () => <Loading />;
-  const [repo, setrepo] = useState([]);
-  // todo: remove useContex because is not supported
-  const {isDark} = useContext(StyleContext);
-
-  useEffect(() => {
-    const getRepoData = () => {
-      fetch("/profile.json")
-        .then(result => {
-          if (result.ok) {
-            return result.json();
-          }
-          throw result;
-        })
-        .then(response => {
-          setrepoFunction(response.data.user.pinnedItems.edges);
-        })
-        .catch(function (error) {
-          console.error(
-            `${error} (because of this error, nothing is shown in place of Projects section. Also check if Projects section has been configured)`
-          );
-          setrepoFunction("Error");
-        });
-    };
-    getRepoData();
-  }, []);
-
-  function setrepoFunction(array) {
-    setrepo(array);
+  if (!bigProjects.display) {
+    return null;
   }
-  if (
-    !(typeof repo === "string" || repo instanceof String) &&
-    openSource.display
-  ) {
-    return (
-      <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
-            {repo.map((v, i) => {
-              if (!v) {
-                console.error(
-                  `Github Object for repository number : ${i} is undefined`
-                );
-              }
-              return (
-                <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
-              );
-            })}
-          </div>
-          <Button
-            text={"More Projects"}
-            className="project-button"
+  return (
+    <section id="projects">
+      <div className="section-label">03 — Projects</div>
+      <Fade bottom duration={1000}>
+        <h2 className="section-title">Things I've Built</h2>
+      </Fade>
+
+      <div className="projects-grid">
+        {bigProjects.projects.map((project, i) => (
+          <Fade bottom duration={1200} distance="20px" key={i}>
+            <div className="project-card">
+              <span className="project-corner">Project</span>
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.projectName}
+                  className="project-img"
+                />
+              ) : (
+                <div className="project-img-placeholder">🚀</div>
+              )}
+              <div className="project-body">
+                <div className="project-num">0{i + 1} / {project.projectName}</div>
+                <div className="project-name">{project.projectName}</div>
+                <p className="project-desc">{project.projectDesc}</p>
+                {/* We can add tags if they were in the portfolio.js, but they aren't for projects yet */}
+              </div>
+            </div>
+          </Fade>
+        ))}
+      </div>
+
+      <div style={{textAlign: 'center', marginTop: '2.5rem'}}>
+        <Fade bottom duration={1400}>
+          <a
             href={socialMediaLinks.github}
-            newTab={true}
-          />
-        </div>
-      </Suspense>
-    );
-  } else {
-    return <FailedLoading />;
-  }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.8rem 1.8rem',
+              fontSize: '0.9rem',
+              fontWeight: 500,
+              background: 'transparent',
+              color: '#e2e8f0',
+              border: '1px solid rgba(0, 229, 255, 0.25)',
+              borderRadius: '3px',
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+              letterSpacing: '0.03em'
+            }}
+          >
+            <i className="fab fa-github"></i> View all on GitHub
+          </a>
+        </Fade>
+      </div>
+    </section>
+  );
 }

@@ -20,7 +20,7 @@ function Header() {
     <Headroom>
       <header className="header">
         <a href="/" className="logo">
-          <span>&lt;</span>Madhesh<span>/&gt;</span>
+          <span>&lt;</span>M<span>/&gt;</span>
         </a>
         <ul className="menu">
           {viewSkills && (

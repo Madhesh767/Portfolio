@@ -1,37 +1,111 @@
-.experience-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+@import "../../_globalColor";
+
+#experience {
+  padding: 6rem 4rem;
+  background: $bg2;
+  position: relative;
+  z-index: 1;
 }
 
-.experience-heading {
-  font-size: 56px;
-  font-weight: 400;
-}
+.exp-timeline {
+  margin-top: 3rem;
+  position: relative;
+  padding-left: 2rem;
 
-.experience-container {
-  display: flex;
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
-}
-
-.experience-container > * {
-  flex: 1;
-}
-
-/* Media Query */
-
-@media (max-width: 1380px) {
-  .experience-heading {
-    font-size: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, $cyan, transparent);
   }
 }
 
-@media (max-width: 768px) {
-  .experience-heading {
-    font-size: 30px;
-    text-align: center;
+.exp-item {
+  position: relative;
+  padding-bottom: 3rem;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid $cyan;
+    background: $bg2;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  }
+}
+
+.exp-card {
+  background: $bg3;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 1.75rem;
+  transition: border-color 0.25s, transform 0.25s;
+
+  &:hover {
+    border-color: $border2;
+    transform: translateX(4px);
+  }
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.exp-role {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $text;
+}
+
+.exp-company {
+  font-size: 0.9rem;
+  color: $cyan;
+  margin-top: 0.2rem;
+}
+
+.exp-date {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: $text3;
+  background: $bg2;
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  border: 1px solid $border;
+  white-space: nowrap;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+  background: rgba(0, 229, 255, 0.08);
+  color: $cyan;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+  #experience {
+    padding: 4rem 1.5rem;
   }
 }

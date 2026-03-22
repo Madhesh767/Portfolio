@@ -1,69 +1,86 @@
-import React, {useContext} from "react";
+import React from "react";
 import "./Contact.scss";
-import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {illustration, contactInfo} from "../../portfolio";
+import {contactInfo, socialMediaLinks} from "../../portfolio";
 import {Fade} from "react-reveal";
-import email from "../../assets/lottie/email";
-import DisplayLottie from "../../components/displayLottie/DisplayLottie";
-import StyleContext from "../../contexts/StyleContext";
 
 export default function Contact() {
-  const {isDark} = useContext(StyleContext);
   return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main contact-margin-top" id="contact">
-        <div className="contact-div-main">
-          <div className="contact-header">
-            <h1 className="heading contact-title">{contactInfo.title}</h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode contact-subtitle"
-                  : "subTitle contact-subtitle"
-              }
-            >
-              {contactInfo.subtitle}
-            </p>
-            <div
-              className={
-                isDark ? "dark-mode contact-text-div" : "contact-text-div"
-              }
-            >
-              {contactInfo.number && (
-                <>
-                  <a
-                    className="contact-detail"
-                    href={"tel:" + contactInfo.number}
-                  >
-                    {contactInfo.number}
-                  </a>
-                  <br />
-                  <br />
-                </>
-              )}
-              <a
-                className="contact-detail-email"
-                href={"mailto:" + contactInfo.email_address}
-              >
-                {contactInfo.email_address}
+    <section id="contact">
+      <div className="section-label">05 — Contact</div>
+
+      <div className="contact-wrapper">
+        <Fade bottom duration={1000}>
+          <h2 className="section-title">Let's Build Something</h2>
+        </Fade>
+        
+        <Fade bottom duration={1200} distance="20px">
+          <p>
+            Discuss a project, backend architecture, or just want to say hi? My
+            inbox is open. I'm currently working at Pitfall and selectively
+            available for interesting challenges.
+          </p>
+
+          <div style={{marginBottom: "1.5rem"}}>
+            <span className="avail-badge">
+              Not actively looking — open to great opportunities
+            </span>
+          </div>
+
+          <div className="contact-details">
+            {contactInfo.number && (
+              <a href={`tel:${contactInfo.number}`} className="contact-item">
+                <i className="fas fa-phone"></i> {contactInfo.number}
               </a>
-              <br />
-              <br />
-              <SocialMedia />
-            </div>
-          </div>
-          <div className="contact-image-div">
-            {illustration.animated ? (
-              <DisplayLottie animationData={email} />
-            ) : (
-              <img
-                alt="Man working"
-                src={require("../../assets/images/contactMailDark.svg")}
-              ></img>
             )}
+            <a href={`mailto:${contactInfo.email_address}`} className="contact-item">
+              <i className="fas fa-envelope"></i> {contactInfo.email_address}
+            </a>
           </div>
-        </div>
+
+          <div className="contact-socials">
+            <style>{`
+              .social-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(0, 229, 255, 0.12);
+                color: #94a3b8;
+                font-size: 0.9rem;
+                text-decoration: none;
+                transition: all 0.2s;
+              }
+              .social-icon:hover {
+                border-color: #00e5ff;
+                color: #00e5ff;
+                background: rgba(0, 229, 255, 0.08);
+                transform: translateY(-2px);
+              }
+            `}</style>
+            <a
+              href={socialMediaLinks.github}
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+            <a
+              href={socialMediaLinks.linkedin}
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href={`mailto:${socialMediaLinks.gmail}`} className="social-icon">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
+        </Fade>
       </div>
-    </Fade>
+    </section>
   );
 }

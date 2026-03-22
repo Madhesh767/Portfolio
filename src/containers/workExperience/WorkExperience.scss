@@ -108,4 +108,18 @@
   #experience {
     padding: 4rem 1.5rem;
   }
+  
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .exp-date {
+    align-self: flex-start;
+  }
+  
+  .exp-item {
+    padding-left: 1.5rem;
+  }
 }

@@ -42,7 +42,6 @@
   justify-content: center;
 }
 
-
 .hero-profile-img {
   width: 600px;
   height: 600px;
@@ -55,37 +54,6 @@
   &:hover {
     transform: scale(1.02);
   }
-}
-
-@keyframes tech-float {
-  0% { background-position: 0 0, 0 0; }
-  100% { background-position: 0 0, 100px 100px; }
-}
-
-@keyframes pulse-tech {
-  0%, 100% { transform: scale(1); opacity: 0.4; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
-
-@keyframes rotate-tech {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes pulse-tech {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.05); opacity: 0.7; }
-}
-
-@keyframes scan-vertical {
-  0% { top: -10%; }
-  100% { top: 110%; }
-}
-
-
-@keyframes orb-float {
-  0%, 100% { transform: translateY(-50%) scale(1); }
-  50% { transform: translateY(-52%) scale(1.04); }
 }
 
 .hero-tag {
@@ -215,9 +183,46 @@
 @media (max-width: 900px) {
   .greet-main {
     padding: 7rem 1.5rem 4rem;
+    text-align: center;
+    align-items: center;
   }
-  
+
+  .hero-orb {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    right: 0;
+    top: 0;
+    transform: none;
+    margin-bottom: 3rem;
+    order: -1;
+  }
+
+  .hero-profile-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero-bg-text {
+    font-size: 8rem;
+    opacity: 0.3;
+    top: 20%;
+  }
+
   .greeting-text {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .button-greeting-div {
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+    margin-top: 2rem;
   }
 }

@@ -15,14 +15,16 @@
   border-bottom: 1px solid $border;
   width: 100%;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .logo {
   font-family: var(--mono);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: $cyan;
   text-decoration: none;
   letter-spacing: 0.05em;
+  font-weight: 700;
   
   span {
     color: $text3;
@@ -35,6 +37,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 
   li a {
     font-size: 0.85rem;
@@ -48,6 +51,42 @@
     &:hover {
       color: $cyan;
     }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $cyan;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      background: $cyan;
+      transition: all 0.3s ease;
+    }
+
+    &::before { top: -8px; left: 0; }
+    &::after { top: 8px; left: 0; }
+  }
+
+  &.open .hamburger {
+    background: transparent;
+    &::before { transform: rotate(45deg); top: 0; }
+    &::after { transform: rotate(-45deg); top: 0; }
   }
 }
 
@@ -65,16 +104,39 @@
   50% { opacity: 0.4; }
 }
 
-.menu-btn, .menu-icon {
-  display: none;
-}
-
 @media (max-width: 900px) {
   .header {
     padding: 1rem 1.5rem;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
   .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: rgba(6, 9, 16, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 3rem;
+
+    &.open {
+      right: 0;
+    }
+
+    li a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .nav-dot {
     display: none;
   }
 }

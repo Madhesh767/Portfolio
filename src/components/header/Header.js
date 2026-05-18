@@ -1,72 +1,66 @@
-import React, {useContext} from "react";
+import React, { useState } from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import StyleContext from "../../contexts/StyleContext";
 import {
-  greeting,
   workExperiences,
   skillsSection,
- 
-  resumeSection
+  educationInfo,
+  bigProjects
 } from "../../portfolio";
 
 function Header() {
-  const {isDark} = useContext(StyleContext);
+  const [menuOpen, setMenuOpen] = useState(false);
   const viewExperience = workExperiences.display;
   const viewSkills = skillsSection.display;
-  const viewResume = resumeSection.display;
-  const viewSkillBars = skillsSection.display;
+  
+  const viewEducation = educationInfo.display;
+  const viewProjects = bigProjects.display;
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
+      <header className="header">
         <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
-          <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
+          <span>&lt;</span>Madhesh<span>/&gt;</span>
         </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label
-          className="menu-icon"
-          htmlFor="menu-btn"
-          style={{color: "white"}}
-        >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
-        </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
+        
+        <button className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} aria-label="Toggle Menu">
+          <span className="hamburger"></span>
+        </button>
+
+        <ul className={`menu ${menuOpen ? 'open' : ''}`}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills" onClick={closeMenu}>Skills</a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience" onClick={closeMenu}>Experience</a>
             </li>
           )}
-
-          {viewSkillBars && (
+          {viewProjects && (
             <li>
-              <a href="#skillbars">techStack</a>
+              <a href="#projects" onClick={closeMenu}>Projects</a>
             </li>
           )}
-
-          {viewResume && (
+          {viewEducation && (
             <li>
-              <a href="#resume">Resume</a>
+              <a href="#education" onClick={closeMenu}>Education</a>
             </li>
           )}
+          {/* {viewResume && (
+            <li>
+              <a href="#resume" onClick={closeMenu}>Resume</a>
+            </li>
+          )} */}
           <li>
-            <a href="#contact">Contact Me</a>
-          </li>
-          <li>
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
-              <ToggleSwitch />
-            </a>
+            <a href="#contact" onClick={closeMenu}>Contact</a>
           </li>
         </ul>
+        <div className="nav-dot" title="Available for work"></div>
       </header>
     </Headroom>
   );

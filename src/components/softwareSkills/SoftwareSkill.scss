@@ -1,31 +1,45 @@
 @import "../../_globalColor";
 
-.dev-icons {
-  padding-left: 0;
-  list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tech-card {
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: 6px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.25s;
   text-align: center;
+
+  &:hover {
+    border-color: $cyan;
+    background: rgba(0, 229, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.1);
+  }
+
+  i {
+    font-size: 1.6rem;
+    color: $cyan;
+  }
+
+  span {
+    font-size: 0.78rem;
+    color: $text2;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
 }
 
-.software-skill-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.software-skill-inline > i {
-  color: $subTitle;
-}
-
-.software-skill-inline > i:hover {
-  color: $skillsColor;
-}
-.software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+@media (max-width: 600px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

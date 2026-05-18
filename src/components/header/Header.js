@@ -13,7 +13,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const viewExperience = workExperiences.display;
   const viewSkills = skillsSection.display;
-  const viewResume = resumeSection.display;
+  
   const viewEducation = educationInfo.display;
   const viewProjects = bigProjects.display;
 

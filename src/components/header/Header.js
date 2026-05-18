@@ -4,7 +4,6 @@ import "./Header.scss";
 import {
   workExperiences,
   skillsSection,
-  resumeSection,
   educationInfo,
   bigProjects
 } from "../../portfolio";

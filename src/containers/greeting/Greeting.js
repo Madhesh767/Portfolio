@@ -1,7 +1,7 @@
 import React from "react";
 import {Fade} from "react-reveal";
 import "./Greeting.scss";
-import {greeting, resumeSection, socialMediaLinks} from "../../portfolio";
+import {greeting, socialMediaLinks} from "../../portfolio";
 import {useTypewriter} from "../../hooks/useTypewriter";
 import profilePic from "../../assets/images/Mad2.png";
 

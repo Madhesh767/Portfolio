@@ -17,13 +17,13 @@ const illustration = {
 
 const greeting = {
   username: "Madhesh",
-  title: "Madhesh Duraisamy",
+  title: "Madhesh P D",
   subTitle: emoji(
-    "A passionate Backend Developer 🚀 specializing in AWS Cloud Architecture and Node.js. I have extensive experience in building scalable, serverless applications and robust backend systems."
+    "Full Stack Developer with hands-on production experience building and deploying scalable web applications on AWS. Specialises in Node.js backend services, React.js SPAs, and serverless architectures using Lambda, API Gateway, Cognito, SQS, and DynamoDB."
   ),
   resumeLink:
-    "C:/Users/madhe/Documents/Trial/Portfolio/developerFolio/src/assets/images/Mad.pdf", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+    "/Madhesh_Resume.pdf",
+  displayGreeting: true
 };
 
 // Social Media Links
@@ -31,7 +31,7 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/Madhesh767",
   linkedin: "https://www.linkedin.com/in/madhesh-d-9b1b42251/",
-  gmail: "madhesh@pitfall.in",
+  gmail: "madhesh.suguna76@gmail.com",
   instagram: "",
 
   // Instagram, Twitter and Kaggle are also supported in the links!
@@ -43,27 +43,28 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "Specializing in Backend Architecture and Cloud Services.",
+  subTitle: "Full Stack Developer • AWS Cloud & Backend Engineer",
   skills: [
-    emoji(
-      "⚡ Building scalable backend services using Node.js and Express"
-    ),
-    emoji("⚡ Architecting serverless solutions with AWS Lambda and API Gateway"),
-    emoji(
-      "⚡ Database management with DynamoDB, PostgreSQL, and MongoDB"
-    ),
-    emoji(
-      "⚡ Implementing CI/CD pipelines and automated deployments on AWS"
-    )
+    emoji("⚡ Building scalable backend services using Node.js and Express"),
+    emoji("⚡ Architecting serverless solutions with AWS Lambda, API Gateway, Cognito, SQS, and DynamoDB"),
+    emoji("⚡ Frontend development with React.js, TypeScript, and modern JavaScript (ES6+)"),
+    emoji("⚡ Database management with PostgreSQL, DynamoDB, MongoDB, and MySQL"),
+    emoji("⚡ Implementing CI/CD pipelines and automated deployments on AWS Amplify, S3, and CloudFront"),
+    emoji("⚡ Full delivery lifecycle from database schema design to CDN deployment")
   ],
-
-  /* Make Sure to include correct Font Awesome Classname to view your icon
-https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
+      skillName: "React",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
       skillName: "nodejs",
       fontAwesomeClassname: "fab fa-node"
+    },
+    {
+      skillName: "TypeScript",
+      fontAwesomeClassname: "fas fa-code"
     },
     {
       skillName: "aws",
@@ -73,12 +74,17 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
+    
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "DynamoDB",
+      fontAwesomeClassname: "fas fa-database"
     },
     {
-      skillName: "Dynamo DB",
+      skillName: "PostgreSQL",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "MongoDB",
       fontAwesomeClassname: "fas fa-database"
     },
     {
@@ -89,32 +95,40 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "Git",
       fontAwesomeClassname: "fab fa-git"
     },
+    
     {
       skillName: "npm",
       fontAwesomeClassname: "fab fa-npm"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Education Section
 
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: true,
   schools: [
-    {
-      schoolName: "Lakshmi Matric Higher Secondary School",
-      logo: require("./assets/images/LMHSS.png"),
-      subHeader: "Computer Science",
-      duration: " 2009 - 2021",
-      desc: " HSC:87%"
-    },
     {
       schoolName: "Hindusthan Institute of Technology",
       logo: require("./assets/images/HIT.png"),
-      subHeader: "BE.CSE",
-      duration: "2021-2025",
-      desc: "CGPA:7.4"
+      subHeader: "B.E. – Computer Science and Engineering",
+      duration: "2021 – 2025",
+      desc: "CGPA: 7.21"
+    },
+    {
+      schoolName: "Lakshmi Matric Higher Secondary School",
+      logo: require("./assets/images/LMHSS.png"),
+      subHeader: "Higher Secondary Certificate (HSC)",
+      duration: "2020 – 2021",
+      desc: "87%"
+    },
+    {
+      schoolName: "Lakshmi Matric Higher Secondary School",
+      logo: require("./assets/images/LMHSS.png"),
+      subHeader: "Secondary School Leaving Certificate (SSLC)",
+      duration: "2018 – 2019",
+      desc: "83%"
     }
   ]
 };
@@ -122,19 +136,23 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: true,
   experience: [
     {
-      Stack: "Backend (Node.js/Express)", 
+      Stack: "Backend (Node.js/Express/Serverless)", 
       progressPercentage: "95%" 
     },
     {
-      Stack: "AWS Cloud Services",
+      Stack: "AWS Cloud Services (Lambda, API Gateway, EC2, S3, DynamoDB)",
       progressPercentage: "85%"
     },
     {
-      Stack: "Database (SQL/NoSQL)",
+      Stack: "Frontend (React.js/TypeScript/JavaScript)",
       progressPercentage: "80%"
+    },
+    {
+      Stack: "Database (PostgreSQL/MySQL/MongoDB/DynamoDB)",
+      progressPercentage: "85%"
     }
   ],
   displayCodersrank: false 
@@ -143,21 +161,32 @@ const techStack = {
 // Work experience section
 
 const workExperiences = {
-  display: true, //Set it to true to show workExperiences Section
+  display: true,
   experience: [
     {
-      role: "Software Devloper",
-      company: "Pitfall PVT LTD",
+      role: "Full Stack Developer",
+      company: "Pitfall Pvt Ltd",
       companylogo: require("./assets/images/Pitfall.png"),
-      date: "March 2025 – At Present",
-      descBullets: ["Javascript", "React JS", "DynamoDB", "AWS Lambda"]
+      date: "March 2025 – Present",
+      descBullets: [
+        "Engineered Node.js backend services for 4 production applications (Business Management System, WhatsApp messenger, Gold pledge and repledge, Restaurant Table Booking) on AWS EC2 with auto-scaling.",
+        "Architected serverless REST APIs with AWS Lambda + API Gateway, eliminating fixed server costs and enabling on-demand scaling.",
+        "Deployed React.js SPAs across all products via AWS Amplify CI/CD, S3 static hosting, CloudFront CDN, and Route 53.",
+        "Designed multi-database architectures combining PostgreSQL (billing, loans, orders) with Amazon DynamoDB for high-throughput operations.",
+        "Implemented Amazon Cognito for user authentication, JWT-based authorization, and RBAC across all platforms.",
+        "Integrated Amazon SQS message queuing to decouple bulk WhatsApp notification delivery for asynchronous processing."
+      ]
     },
     {
-      role: "Web developer Intern",
-      company: "Codebind",
+      role: "Web Developer Intern",
+      company: "Code Bind",
       companylogo: require("./assets/images/code.jpeg"),
       date: "June 2023 – July 2023",
-      descBullets: ["HTML", "CSS", "Mongodb"]
+      descBullets: [
+        "Built 3 full-stack applications (Car Rental System, Task Management, Tour Booking) end-to-end using React.js, Node.js, and MySQL/PostgreSQL.",
+        "Designed JWT-based authentication and admin dashboard features for vehicle availability, booking management, task assignment, and itinerary browsing.",
+        "Participated in code reviews and maintained Git version control practices across all repositories."
+      ]
     }
   ]
 };
@@ -176,26 +205,27 @@ const bigProjects = {
   title: "Projects",
   subtitle: "",
   projects: [
+    
     {
-      image: require("./assets/images/agribot.png"),
-      projectName: "Agri-Bot",
+      image: require("./assets/images/task.jpg"),
+      projectName: "Task Management System",
       projectDesc:
-        "An Agri-Bot that helps small-scale farmers analyze soil and field conditions, providing insights on suitable crops to yield, improving productivity, efficiency, and sustainability."
+        "Full-stack application with React.js frontend and Node.js backend enabling real-time task tracking across distributed teams. Built a dual-role permission system with manager and team member accounts. Developed CRUD-compliant REST APIs with Express.js covering user profiles, tasks, assignments, priorities, deadlines, and status workflows. Implemented JWT authentication with session management enforcing data isolation between roles."
     },
     {
-      image: require("./assets/images/gesture.png"),
-      projectName: "Hand Gesture",
+      image: require("./assets/images/agribot.jpg"),
+      projectName: "Agri-Bot — AI Agricultural Assistant",
       projectDesc:
-        "The hand gesture recognition project uses computer vision to detect and interpret hand movements in real time. It enables touchless interaction by mapping gestures to specific commands. This system can be applied in areas like sign language translation, virtual control, and robotics, enhancing human-computer interaction in an intuitive way. "
+        "Built an AI-powered assistant integrating with NPK sensor hardware to capture real-time soil pH, nitrogen, phosphorus, and potassium readings. Developed a crop recommendation engine that analyses sensor data to suggest optimal crops, reducing crop failure risk for small-scale farmers. Delivered a unified Python full-stack platform connecting the data pipeline, recommendation logic, and government agricultural scheme discovery."
     },
     {
-      image: require("./assets/images/Carproject.png"),
-      projectName: "Car rental system",
+      image: require("./assets/images/gesture.jpg"),
+      projectName: "Hand Gesture Recognition",
       projectDesc:
-        "Designed and implemented a user-friendly web-based platform that enables customers  to seamlessly browse, reserve, and manage car rentals. Integrated features such as real-time availability, pricing, and secure payment processing. Implemented a comprehensive admin dashboard for efficient fleet management, reservation tracking, and reporting.  "
+        "Built a real-time gesture recognition system using TensorFlow, OpenCV, and Python, achieving reliable multi-gesture classification from live webcam input via a trained deep learning model. Applied data augmentation and hyperparameter tuning, visualising performance with Matplotlib accuracy curves, loss graphs, and confusion matrices."
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
 
 // Achievement Section
@@ -329,7 +359,7 @@ const contactInfo = {
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
   number: "+91 8668002081",
-  email_address: "madhesh@pitfall.in"
+  email_address: "madhesh.suguna76@gmail.com"
 };
 
 // Twitter Section

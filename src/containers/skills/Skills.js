@@ -80,13 +80,13 @@ export default function Skills() {
       <div className="stats-row">
         <Fade bottom duration={1000}>
           <div className="stat-box">
-            <span className="stat-num">2+</span>
+            <span className="stat-num">1+</span>
             <span className="stat-label">Years Experience</span>
           </div>
         </Fade>
         <Fade bottom duration={1200}>
           <div className="stat-box">
-            <span className="stat-num">3+</span>
+            <span className="stat-num">5+</span>
             <span className="stat-label">Projects Built</span>
           </div>
         </Fade>

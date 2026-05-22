@@ -1,7 +1,7 @@
 import React from "react";
 import {Fade} from "react-reveal";
 import "./Greeting.scss";
-import {greeting, socialMediaLinks} from "../../portfolio";
+import {greeting, resumeSection, socialMediaLinks} from "../../portfolio";
 import {useTypewriter} from "../../hooks/useTypewriter";
 import profilePic from "../../assets/images/Mad2.png";
 
@@ -43,7 +43,10 @@ export default function Greeting() {
         </p>
 
         <div className="button-greeting-div">
-          <a href="#projects" className="btn-primary">
+          <a href={greeting.resumeLink} target="_blank" rel="noopener noreferrer" className="btn-primary" download>
+            <i className="fas fa-download"></i> Download Resume
+          </a>
+          <a href="#projects" className="btn-ghost">
             <i className="fas fa-code"></i> View Projects
           </a>
           <a href="#contact" className="btn-ghost">
